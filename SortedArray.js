@@ -1,5 +1,3 @@
-
-B.
 function bubbleSortDescending(arr) {
     let n = arr.length;
     let swapped;
