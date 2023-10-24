@@ -26,7 +26,4 @@ console.log(reversedSentence);
 
 
 
-const unsortedArray = [5, 2, 9, 1, 5, 6];
-const sortedArray = bubbleSortDescending(unsortedArray);
-console.log("Sorted array in descending order:", sortedArray);
 
