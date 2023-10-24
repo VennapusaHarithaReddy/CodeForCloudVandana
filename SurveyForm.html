@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survey Form</title>
+  <style>
+    .survey-form {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    }
+ .submit-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .reset-button {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>The input element</h1>
+
+<div class="survey-form">
+    <h1>Survey Form</h1>
+    <form id="surveyForm">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" required><br><br>
+      
+      <label for="lastName">Last Name:</label>
+      <input type="text"  id="lastName" required><br><br>
+      
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" required><br><br>
+      
+      <label for="country">Country:</label>
+      <select id="country" required>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <!-- Add more options as needed -->
+      </select><br><br>
+      
+      <label for="gender">Gender:</label>
+      <label><input type="checkbox" name="gender" value="Male"> Male</label>
+      <label><input type="checkbox" name="gender" value="Female"> Female</label><br><br>
+      
+      <label for="profession">Profession:</label>
+      <input type="text" id="profession" required><br><br>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" required><br><br>
+      
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" required><br><br>
+      
+    <button type="button" class="submit-button" onclick="submitForm()">Submit</button>
+      <button type="button" class="reset-button" onclick="resetForm()">Reset</button>
+    </form>
+  </div>
+<script>
+    function submitForm() {
+      // Get form values
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const dob = document.getElementById('dob').value;
+      const country = document.getElementById('country').value;
+      const gender = document.querySelectorAll('input[name="gender"]:checked');
+      const profession = document.getElementById('profession').value;
+      const email = document.getElementById('email').value;
+      const mobile = document.getElementById('mobile').value;
+      
+      const popupMessage = `First Name: ${firstName}\nLast Name: ${lastName}\nDate of Birth: ${dob}\nCountry: ${country}\nGender: ${Array.from(gender, g => g.value).join(', ')}\nProfession: ${profession}\nEmail: ${email}\nMobile Number: ${mobile}`;
+      alert(popupMessage);
+
+      document.getElementById('surveyForm').reset();
+    }
+
+    function resetForm() {
+      document.getElementById('surveyForm').reset();
+    }
+  </script>
+
+</body>
+</html>
